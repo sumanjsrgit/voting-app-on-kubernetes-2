@@ -8,19 +8,19 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgres-pod
-      app: demo-voting-app
+            name: postgres-pod
+            app: demo-voting-app
 
   template:
-      metadata:
-      name: postgres-pod
-      labels:
-          name: postgres-pod
-          app: demo-voting-app
-      spec:
-          containers:
-            - name: postgres
-              image: postgres:9.4
+    metadata:
+        name: postgres-pod
+        labels:
+            name: postgres-pod
+            app: demo-voting-app
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:9.4
           ports:
-              - containerPort: 5432
+            - containerPort: 5432
     
